@@ -7,12 +7,12 @@
 <body>
     <script>
         const input = prompt('태어난 해를 입력해 주새요')
+        if(isNaN(input) == false)  {
         let année = Number(input)
-        const année1 = Boolean(input)
         let year
 
-        if( année1 == true)
-    {
+    
+    
         if( année < 0) year = ( année + (12^10000))
         else year = année
 
@@ -54,7 +54,7 @@
     }
 
     else alert("형식이 올바르지 않습니다")
-    
+
     </script>
     
 </body>
