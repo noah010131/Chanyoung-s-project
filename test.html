@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+  
     <title></title>
 </head>
 <body>
+    <script src="lodash.html"></script>
     <script>
-       const arr = [12,32,43,2435,345]
+        const person = [{
+            name : 'Chanyoung',
+            age : 22,
+            sexe : 'male',
+            height : '180cm'
+        },{
+            name : 'Hayoung',
+            age : 18,
+            sexe : 'female',
+            height : '165cm'
+        },{
+            name : 'Inchang',
+            age : 50,
+            sexe : 'male',
+            height : '169cm'
+        },{
+            name : 'Insook',
+            age : 48,
+            sexe : 'female',
+            height : '170'
+        }]
 
-       arr.forEach((value) => console.log(value + 2))
-
+        const output = _.sortBy(person, (person) => person.age)
+        console.log(output)
     </script>
     
 </body>

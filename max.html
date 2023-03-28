@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title></title>
+</head>
+<body>
+    <script>
+       const max = function(a, ...rests){
+    let output
+    let items
+    if( typeof(a) === 'number'){
+        output = a
+        items = rests
+    } else if( Array.isArray(a)){
+        output = a[0]
+        items = a
+    } else {
+        console.log('insérer les chiffres')
+
+    }
+
+    for(const item of items){
+        if( output < item) {
+            output = item
+            return output
+    }
+ }
+}
+
+
+
+    </script>
+    
+</body>
+</html>
