@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chanyoung</title>
+</head>
+<body>
+    <script>
+    let count = 0
+
+            const header = document.createElement('h1')
+            const connect = document.createElement('button')
+            const disconnect = document.createElement('button')
+            const p = document.createElement('p')
+
+            header.style.userSelect = 'none'
+
+            document.body.appendChild(header)
+            document.body.appendChild(connect)
+            document.body.appendChild(disconnect)
+            document.body.appendChild(p)
+
+            header.innerText = '클릭하세요'
+            const listener = () => {
+                count++
+                header.innerText = `클릭횟수 : ${count}`
+            }
+
+            connect.innerText = "연결"
+            connect.addEventListener('click', () => {
+                header.addEventListener('click', (listener))
+                p.innerText ='이벤트 연결됨'
+            })
+
+            disconnect.innerText = "연결해제"
+            disconnect.addEventListener('click', () => {
+                header.removeEventListener('click', (listener))
+                p.innerText ='이벤트 연결해제'
+            })
+    </script>
+    
+</body>
+</html>

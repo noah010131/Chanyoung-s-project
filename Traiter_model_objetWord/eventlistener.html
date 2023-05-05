@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        document.addEventListener('DOMContentLoaded',() => {
+            let count = 0
+            const header = document.querySelector('h1')
+            header.style.userSelect ='none '
+
+
+             const listener = () => {
+                
+                header.textContent = `click : ${count++}`
+                return count
+               }
+
+            header.addEventListener('click', listener)
+
+            const Timeover = () => {
+
+                header.removeEventListener('click', listener)
+                header.textContent = `당신이 10초 동안 클릭한 횟수는 ${count} 입니다` 
+            } 
+            setTimeout(Timeover, 10000)
+        })
+    </script>
+   
+    <title></title>
+</head>
+<body>
+    <h1>click please</h1>
+    
+    
+</body>
+</html>
