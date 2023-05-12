@@ -1,51 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const star = document.createElement('h1')
-            document.body.appendChild(star)
-            star.style.position ='absolute'
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
 
-            star.innerText = '*'
+        const star =  document.createElement('h1')
+        document.body.appendChild(star)
+        star.style.position = 'absolute'
 
-            let move = 20
-            let [x, y] = [0, 0]
-            const [left, up, right, down] = [37, 38, 39, 40]
+        star.innerText = '^u^;;'
 
-            document.addEventListener('keydown', (event) => {
-                switch (event.keyCode) {
-                    case left :
-                        x -= 1
-                        break
-                    
-                    case up :
-                        y -= 1
-                        break
+        let move = 25
+        let x = 0
+        let y = 0
 
-                    case right :
-                        x += 1
-                        break
+        const left = 37
+        const up = 38
+        const right= 39
+        const down = 40
 
-                    case down :
-                        y += 1
-                        break
-                }
+        document.addEventListener('keydown', (event) => {
 
-                print()
-            })
+            switch (event.keyCode) {
 
-            const print = () => {
-                star.style.left = `${x * move}px`
-                star.style.top = `${y * move}px`
+                case left : 
+                    x = x - 1
+                    break
+
+                case up :
+                    y = y - 1
+                    break
+
+                case right : 
+                    x = x + 1
+                    break
+
+                case down :
+                    y = y + 1
+                    break
             }
-   
-        })
-    </script>
 
-    <title>Document</title>
+            print()
+
+            
+
+        })
+
+    const print = () => {
+
+        star.style.left = `${ x * move}px`
+        star.style.top = `${ y * move}px`
+}  
+    })
+</script>
 </head>
 <body>
-    
+   
 </body>
 </html>
