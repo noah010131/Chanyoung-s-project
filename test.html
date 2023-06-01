@@ -1,60 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
 
-        const star =  document.createElement('h1')
-        document.body.appendChild(star)
-        star.style.position = 'absolute'
+            const input = document.querySelector("#a1")
+            const input2 =  document.querySelector("#a2")
+            const button = document.querySelector("#a11")
+            const button2 = document.querySelector("#a22")
+            const p = document.querySelector("#a3")
+         
 
-        star.innerText = '^u^;;'
+            button.addEventListener('click', () => {
 
-        let move = 25
-        let x = 0
-        let y = 0
+                const inch = Number(input.value)
 
-        const left = 37
-        const up = 38
-        const right= 39
-        const down = 40
+                if (isNaN(inch)) {
 
-        document.addEventListener('keydown', (event) => {
+                    p.textContent = 'insérer le chiffre'
+                    return
+                }
 
-            switch (event.keyCode) {
+                     const cm = inch * 2.54
+                     p.textContent = `${inch}inch est égal à ${cm}cm.`
+                })
 
-                case left : 
-                    x = x - 1
-                    break
+            button2.addEventListener('click', () => {
 
-                case up :
-                    y = y - 1
-                    break
+                const cm = Number(input2.value)
 
-                case right : 
-                    x = x + 1
-                    break
 
-                case down :
-                    y = y + 1
-                    break
-            }
+                if (isNaN(cm)) {
 
-            print()
+                    p.textContent = 'insérer le chiffre'
+                     return
+                }
 
-            
+                    const inch = cm / 2.54
+                    p.textContent = ` ${cm}cm est égal à ${inch}inch.`
+                })
+
 
         })
+    </script>
+   
 
-    const print = () => {
-
-        star.style.left = `${ x * move}px`
-        star.style.top = `${ y * move}px`
-}  
-    })
-</script>
+    <title>Document</title>
 </head>
 <body>
-   
+    <input type="text" id="a1"> inch <br>
+    <button id="a11">inch à cm</button> 
+    <button id="a22">cm à inch</button> <br>
+    <input type="text" id = "a2"> cm <br>
+    <p id="a3"></p>
+    
 </body>
 </html>
