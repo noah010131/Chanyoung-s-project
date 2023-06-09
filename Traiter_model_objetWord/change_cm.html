@@ -6,8 +6,13 @@
 
             const input = document.querySelector("input")
             const button = document.querySelector("button")
-            const p = document.querySelector("p")
+            const p = document.querySelector("#result")
             const select = document.querySelector('select')
+
+            const h1 = document.querySelector('h1')
+            h1.style.backgroundColor = 'black'
+            h1.style.color = 'white'
+            h1.style.paddingBlock = "20px"
 
             const mm = 10
             const m = 0.01
@@ -30,8 +35,10 @@
                     p.textContent = '입력이 잘못되었습니다. 숫자를 입력하세요'
                     return
                 }
+                else { 
 
                 calculate()
+            }
             })
 
             const calculate = () => {
@@ -48,6 +55,8 @@
                 }
 
                 p.textContent = `${cm}cm는 ${a}${selectValue}입니다.`
+               
+               
             }
 
         })
@@ -56,15 +65,30 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>cm를 다른 단위로 변환하십시오.</h1> <br>
-    <input type="text">cm <br>
+    <h1> - CM 를 다른 단위로 변환하십시오 - </h1> 
+    <hr>
+    <br>
+    <input type="text"> cm (센티미터)<br>
+    <br>
     <select>
+        <option>선택해주세요</option>
         <option>mm</option>
         <option>m</option>
         <option>inch</option>
         <option>mile</option>
     </select>
-    <button>calculer</button>
-    <p></p>
+    <button> 계산하기 </button>
+    
+    <p id="result" style="font-size: x-large; font-weight:bold ; color: blue;"></p>
+    <hr>
+    <h2>센티미터(프랑스어: centimètre, 영국 영어: centimetre, 미국 영어: centimeter, 기호: cm)는 <br>
+        미터의 100분의 1에 해당하는 길이의 단위다. CGS 단위계의 기본 단위다.</h2>
+        <p>- 출처 : 위키백과 - </p>
+
+    <br>
+    <h3> - 1cm = 10mm <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.01m <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.393701inch <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0000062137mile</h3>
 </body>
 </html>

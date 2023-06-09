@@ -1,68 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <script>
         document.addEventListener('DOMContentLoaded',() => {
-            const select = document.querySelector('select')
+
+            const h1 = document.querySelector('h1')
             const p = document.querySelector('p')
-            const h2 = document.querySelector('h2')
+            const list = document.querySelector('#drinks')
 
-            let count = 0
+            p.textContent = 'Choose your drink'
+            
 
-            const listener = (event) => {
-
+            list.addEventListener('change',(event) => {
                 const options = event.currentTarget.options
                 const index = event.currentTarget.options.selectedIndex
+                let number = options[index].value
 
-                count = count + 1
+                switch(number) {
+                    case '1': 
+                    h1.textContent = 'you choose ice coffee'
+                    break
 
-                if (count === 3) { 
-                select.removeEventListener('change', (listener))
-                p.textContent = 'votre choix est désormais fini'
+                    case '2':
+                    h1.textContent = 'you choose strawberry smothee'
+                    break
+
+                    case '3':
+                    h1.textContent = 'you choose ice tea'
+                    break
+
+                    case '4':
+                    h1.textContent = 'you choose capuchino'
+                    break
+
+                    case '5':
+                    h1.textContent = 'you choose espresso'
+                    break
                 }
 
-                else {
+            })
 
 
-                if(options[index].value === 'Corée du Sud') {
-
-                const src = 'https://www.gov.kr/portal/main'
-
-
-                p.textContent = 'vous pouvez accédez au site privé, réservé aux corréns'
-                h2.innerHTML = `<a href="${src}" target="_blank">accéder au site...</a>`
-            }
-                else {
-                p.textContent = `vous avez chosir : ${options[index].value}`
-
-                }
-
-           
-            }
-        }
-
-            select.addEventListener('change', (listener))
-
-          
-                
-        
         })
     </script>
 
     <title>Document</title>
 </head>
 <body>
-    <h1>Vous êtes origine de quel pays?</h1>
-    <select>
-        <option>France</option>
-        <option>Etats-Unis</option>
-        <option>Allemagne</option>
-        <option>Corée du Sud</option>
-        <option>Japon</option>
+    <h1></h1>
+    <p></p>
+    <select id="drinks">
+        <option value="1">ICE COFFEE</option>
+        <option value="2">STRAWBERRY SMOTHEE</option>
+        <option value="3">ICE TEA</option>
+        <option value="4">CAPUCHINO</option>
+        <option value="5">ESPRESSO</option>
     </select>
-    <p>Le liste des pays</p>
-    <h2></h2>
-   
 </body>
-</html>
 </html>

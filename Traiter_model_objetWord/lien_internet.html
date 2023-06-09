@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <script>
+    document.addEventListener('DOMContentLoaded',() => {
+        let status = false
+
+        const checkbox = document.querySelector("input")
+        checkbox.addEventListener('change', (event) => {
+            status = event.currentTarget.checked
+        })
+
+        const link = document.querySelector('a')
+        link.addEventListener('click', (event) => {
+            if(!status) {
+                event.preventDefault()
+            }
+        })
+    })
+   </script>
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox">
+    <span>activation le lien</span>
+    <br>
+    <a href="https://www.youtube.com">youtube</a>
+    
+</body>
+</html>
