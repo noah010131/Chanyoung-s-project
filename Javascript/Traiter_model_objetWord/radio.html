@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const h1 = document.querySelector("h1")
+        const radios = document.querySelectorAll('[name=nationality]')
+
+
+        radios.forEach((radio) => {
+
+            radio.addEventListener('change', (event) => {
+                const current = event.currentTarget
+
+                if(current.checked) {
+                    h1.textContent = `your nationality is ${current.value}`
+                }
+            })
+        })
+
+    }
+    )
+   </script>
+    <title>Document</title>
+</head>
+<body>
+    <h3>Choose your nationality</h3>
+    <input type="radio", name="nationality", value="France">
+    <span>France</span>
+    <input type="radio", name="nationality", value="Germany">
+    <span>Germany</span>
+    <input type="radio", name="nationality", value="Spain">
+    <span>Spain</span>
+    <input type="radio", name="nationality", value="Italy">
+    <span>Italy</span>
+    <input type="radio", name="nationality", value="England">
+    <span>England</span>
+    <input type="radio", name="nationality", value="USA">
+    <span>USA</span>
+    <input type="radio", name="nationality", value="China">
+    <span>China</span>
+    <input type="radio", name="nationality", value="Japan">
+    <span>Japan</span>
+    <input type="radio", name="nationality", value="Korea">
+    <span>Korea</span>
+    <input type="radio", name="nationality", value="Other">
+    <span>Other</span>
+    <hr>
+    <h1></h1>
+    
+</body>
+</html>

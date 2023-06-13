@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+    <title></title>
+</head>
+<body>
+    <script>
+        const input = prompt('원하시는 숫자 여러개를 입력하세요')
+        console.log(minimum(input))
+
+        function minimum(arr, ...numbers){
+
+            let a, output
+            if( Array.isArray(arr)){
+            output = arr[0]
+            a = arr
+            }
+
+            else if( typeof(arr) === 'number'){
+            output = arr
+            a = numbers
+            }
+
+            else return 0
+
+            for( const b of a){
+
+                if( output > a) output = a
+            }
+
+            return output
+
+        }
+
+
+        alert(output)
+
+    </script>
+    
+</body>
+</html>

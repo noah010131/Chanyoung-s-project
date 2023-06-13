@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const input = document.querySelector("#a1")
+            const input2 =  document.querySelector("#a2")
+            const button = document.querySelector("#a11")
+            const button2 = document.querySelector("#a22")
+            const p = document.querySelector("#a3")
+         
+
+            button.addEventListener('click', () => {
+
+                const inch = Number(input.value)
+
+                if (isNaN(inch)) {
+
+                    p.textContent = 'insérer le chiffre'
+                    return
+                }
+
+                     const cm = inch * 2.54
+                     p.textContent = `${inch}inch est égal à ${cm}cm.`
+                })
+
+            button2.addEventListener('click', () => {
+
+                const cm = Number(input2.value)
+
+
+                if (isNaN(cm)) {
+
+                    p.textContent = 'insérer le chiffre'
+                     return
+                }
+
+                    const inch = cm / 2.54
+                    p.textContent = ` ${cm}cm est égal à ${inch}inch.`
+                })
+
+
+        })
+    </script>
+   
+
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="a1"> inch <br>
+    <button id="a11">inch à cm</button> 
+    <button id="a22">cm à inch</button> <br>
+    <input type="text" id = "a2"> cm <br>
+    <p id="a3"></p>
+    
+</body>
+</html>

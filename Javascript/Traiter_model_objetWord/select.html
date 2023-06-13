@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        document.addEventListener('DOMContentLoaded',() => {
+            const select = document.querySelector('select')
+            const p = document.querySelector('p')
+            const h2 = document.querySelector('h2')
+
+            let count = 0
+
+            const listener = (event) => {
+
+                const options = event.currentTarget.options
+                const index = event.currentTarget.options.selectedIndex
+
+                count = count + 1
+
+                if (count === 3) { 
+                select.removeEventListener('change', (listener))
+                p.textContent = 'votre choix est désormais fini'
+                }
+
+                else {
+
+
+                if(options[index].value === 'Corée du Sud') {
+
+                const src = 'https://www.gov.kr/portal/main'
+
+
+                p.textContent = 'vous pouvez accédez au site privé, réservé aux corréns'
+                h2.innerHTML = `<a href="${src}" target="_blank">accéder au site...</a>`
+            }
+                else {
+                p.textContent = `vous avez chosir : ${options[index].value}`
+
+                }
+
+           
+            }
+        }
+
+            select.addEventListener('change', (listener))
+
+          
+                
+        
+        })
+    </script>
+
+    <title>Document</title>
+</head>
+<body>
+    <h1>Vous êtes origine de quel pays?</h1>
+    <select>
+        <option>France</option>
+        <option>Etats-Unis</option>
+        <option>Allemagne</option>
+        <option>Corée du Sud</option>
+        <option>Japon</option>
+    </select>
+    <p>Le liste des pays</p>
+    <h2></h2>
+   
+</body>
+</html>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <title>DOMContentLoaded</title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+        const hello = document.querySelectorAll('h1')
+
+        hello.forEach((hello) => {
+        hello.textContent = 'HELLO'
+        hello.style.color = 'white'
+        hello.style.backgroundColor = 'yellow'
+        hello.style.padding = '20px'
+        })
+
+    })
+
+    </script>
+</head>
+<body>
+    <h1></h1>
+    <h1></h1>
+</body>
+</html>

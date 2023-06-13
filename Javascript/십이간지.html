@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title></title>
+</head>
+<body>
+    <script>
+        const input = prompt('태어난 해를 입력해 주새요')
+        let année = Number(input)
+        let year
+
+        if( année < 0) year = ( année + (12^10000))
+        else year = année
+
+        const a = year % 12
+
+        let result
+        
+
+        if ( a === 0)  {result = '원숭이'}
+        else if ( a === 1) {result = '닭'}
+        else if ( a === 2) {result = '개'}
+        else if ( a === 3) {result = '돼지'}
+        else if ( a === 4) {result = '쥐'}
+        else if ( a === 5) {result = '소'}
+        else if ( a === 6) {result = '호랑이'}
+        else if ( a === 7) {result = '토끼'}
+        else if ( a === 8) {result = '용'}
+        else if ( a === 9) {result = '뱀'}
+        else if ( a === 10) {result = '말'}
+        else if ( a === 11) {result = '양'}
+        
+        alert(`당신이 태어난 연도는 ${année}년 이고, 당신은 ${result} 띠입니다.`)
+    </script>
+    
+</body>
+</html>

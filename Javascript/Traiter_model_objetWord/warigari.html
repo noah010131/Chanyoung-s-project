@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const header = document.createElement('h1')
+            header.textContent = 'hello, les gars'
+            header.style.backgroundColor = 'pink'
+
+            const one = document.querySelector("#one")
+            const two = document.querySelector("#two")
+
+            const arr = [one, two]
+            let count = 0
+
+            one.appendChild(header)
+
+           const warigari = () => {
+            arr[count % 2].appendChild(header)
+            count++
+            console.log(count)
+           }
+      
+
+           setInterval(warigari, 1000)
+
+           
+        })
+    </script>
+</head>
+<body>
+   <div id= "one" >
+    <h1>ONE</h1>
+ 
+   </div>
+   <hr>
+   <div id='two'>
+    <h2>TWO</h2>
+    
+   </div>
+    
+</body>
+</html>
