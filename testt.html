@@ -3,71 +3,30 @@
 <head>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const select = document.querySelector("#color")
 
-            const context = document.querySelector('#todo')
-            const chuga = document.querySelector('#button-todo')
-            const h1 = document.querySelector('h1')
+            select.addEventListener('change', (event) => {
+                const options = event.currentTarget.options
+                const index = options.selectedIndex
+                let chosenValue = options[index].value
 
-            const hamsu = () => {
-
-                if(context.value !== '') {
-
-                h1.textContent = '할일목록'
-
-                const div = document.createElement('div')
-                document.body.appendChild(div)
-
-                const checkbox = document.createElement('input')
-                checkbox.type ='checkbox'
-                div.appendChild(checkbox)
-
-                checkbox.addEventListener('change', () => {
-                
-                    if(checkbox.checked){
-                        div.style.textDecoration ='line-through'
-                    }else {
-                    div.style.textDecoration =''
-                    }
-                })
-
-                const text = document.createElement('span')
-                div.appendChild(text)
-                text.textContent = context.value
-                context.value = ''
-
-                const remove = document.createElement('button')
-                div.appendChild(remove)
-                remove.textContent = '제거하기'
-
-                remove.addEventListener('click' ,() => {
-                    div.parentNode.removeChild(div)
-                })
-                }
-
-                else {
-
-                h1.textContent ='글자를 입력하세요'
-                return
-                }
-                }
-           
-
-            chuga.addEventListener('click', hamsu)
-
-            context.addEventListener('keyup',(event) => {
-                if(event.keyCode === 13){
-                hamsu()
-                }
-
-        })      
+               document.body.style.backgroundColor = chosenValue
+        })
     })
     </script>
+
+    <title>Document</title>
 </head>
 <body>
-    <h1>할일목록</h1>
-    <input id="todo">
-    <button id="button-todo">추가하기</button>
-    <br>
+    <h1>list of color</h1>
+    <select name="" id="color">
+        <option>choose the color</option>
+        <option>red</option>
+        <option>blue</option>
+        <option>green</option>
+        <option>yellow</option>
+        <option>orange</option>
+    </select>
     
 </body>
 </html>

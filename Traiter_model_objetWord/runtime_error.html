@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const h1 = document.querySelector('h1')
+
+        try {
+            fontion()
+            h1.textContent = 'executed'
+        } catch (exeption) {
+            h1.textContent = 'runtime error'
+        } finally {
+            const h2 = document.createElement('h2')
+            document.body.appendChild(h2)
+            h2.textContent = 'try catch finally'
+        }
+    })
+   </script>
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1> <br>
+    
+</body>
+</html>

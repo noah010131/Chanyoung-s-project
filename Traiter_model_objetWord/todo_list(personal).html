@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+        const inputBox = document.querySelector('#text')
+        const button = document.querySelector('button')
+
+        const fonction = () => {
+            
+            const content = inputBox.value
+
+
+            if( content === ''){
+                return
+
+            } else {
+                const div = document.createElement('div')
+                document.body.appendChild(div)
+
+                const checkbox = document.createElement('input')
+                checkbox.type = 'checkbox'
+                document.body.appendChild(checkbox)
+
+                const text = document.createElement('span')
+                document.body.appendChild(text)
+                text.textContent = content  
+                inputBox.value = ''
+               
+             
+                checkbox.addEventListener('change', () => {
+                    if(checkbox.checked) {
+                    text.style.textDecoration = 'line-through'
+                } else {
+                    text.style.textDecoration = ''
+                }
+                })
+
+                const supprimer = document.createElement('button')
+                document.body.appendChild(supprimer)
+                supprimer.textContent = '지우기'
+
+                supprimer.addEventListener('click',() => {
+                    document.body.removeChild(div)
+                    document.body.removeChild(checkbox)
+                    document.body.removeChild(text)
+                    document.body.removeChild(supprimer)
+
+                })
+
+
+            }
+        }
+
+
+        button.addEventListener('click', (fonction))
+
+        inputBox.addEventListener('keyup',(event) => {
+            const enter = 13
+            if(event.keyCode === enter) {
+                fonction()
+            }
+        })
+
+        })
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>할일목록</h1>
+    <input id="text">
+    <button>추가하기</button>
+    
+    
+</body>
+</html>
