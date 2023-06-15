@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        class Square {
+
+            #length
+
+            constructor(length) {
+                if(length < 0) {
+                    throw '길이는 0보다 커야합니다.'
+                }
+            this.#length = length
+            }
+
+             get 둘래 () {
+                return this.#length * 4
+            } 
+
+             get 넓이 () {
+                return this.#length * this.#length
+            }
+
+            get length () { return this.#length}
+
+            set length (value) {  
+                 if(length < 0) {
+                    throw '길이는 0보다 커야합니다.'
+                }
+            this.#length = value
+        }
+            
+
+        }
+
+        const square = new Square(20)
+      
+
+        console.log(square.넓이)
+        console.log(square.둘래)
+        console.log(square.length)
+        square.length = 3
+        console.log(square.length)
+
+
+
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

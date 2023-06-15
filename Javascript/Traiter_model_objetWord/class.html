@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        class Student {
+
+            constructor( name, français, anglais, math, science) {
+                this.name = name
+                this.français = français
+                this.anglais = anglais
+                this.math = math
+                this.science = science
+            }
+
+            getSum() {
+                return this.anglais + this.français + this.math + this.science
+            }
+
+            getAverage() {
+                return this.getSum() / 4
+            }
+
+            toString() {
+                return `${this.name}\t${this.getSum()}, \t${this.getAverage()}\n`
+            }
+        }
+
+        const student = []
+            student.push(new Student('chan', 45, 34, 34, 43))
+            student.push(new Student('chan', 45, 34, 34, 43))
+            student.push(new Student('chan', 45, 34, 34, 43))
+            student.push(new Student('chan', 45, 34, 34, 43))
+            student.push(new Student('chan', 45, 34, 34, 43))
+            student.push(new Student('chan', 45, 34, 34, 43))
+
+            let output = 'name\tsum\taverage\n'
+            for( const s of student) {
+                output += s.toString()
+            }
+
+            console.log(output)
+        
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,32 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const select = document.querySelector("#color")
 
-            select.addEventListener('change', (event) => {
-                const options = event.currentTarget.options
-                const index = options.selectedIndex
-                let chosenValue = options[index].value
+<script>
+    class Person {
 
-               document.body.style.backgroundColor = chosenValue
-        })
-    })
+        constructor(name, kg, height) {
+            this.name = name
+            this.kg = kg
+            this.height = height
+        }
+
+        getcalcul() {
+            return  this.kg / ( this.height * this.height)
+        }
+
+        getbmi () {
+
+            let res = ''
+            if( this.getcalcul() <= 18.5) {
+                res = '저체중입니다'
+            } else if( this.getcalcul() <= 23) {
+                res = '정상입니다'
+            } else if ( this.getcalcul() <= 25) {
+                res = '과체중입니다'
+            } else {
+                res = '비만입니다. 적당히 처 드세요'
+            }
+
+            return res
+        }
+
+        getoutput () {
+           return `${this.name}은(는) ${this.getbmi()}. ${this.getcalcul().toFixed(2)}\n`
+
+        }
+        
+    }
+
+    const persons = [
+        new Person ( '하영', 52, 1.65),
+        new Person ( '찬영', 75, 1.80),
+        new Person ( '인숙', 54, 1.68),
+        new Person ( '인창', 53, 1.69)
+
+        
+    ]
+
+    let output = ''
+     for (const a of persons) {
+         output += a.getoutput()
+    }
+     console.log(output)
+
     </script>
-
-    <title>Document</title>
-</head>
-<body>
-    <h1>list of color</h1>
-    <select name="" id="color">
-        <option>choose the color</option>
-        <option>red</option>
-        <option>blue</option>
-        <option>green</option>
-        <option>yellow</option>
-        <option>orange</option>
-    </select>
-    
-</body>
-</html>

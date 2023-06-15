@@ -1,0 +1,4 @@
+/Users/chanyoung/Projects/hello/hello/obj/Release/netcoreapp3.1/hello.GeneratedMSBuildEditorConfig.editorconfig
+/Users/chanyoung/Projects/hello/hello/obj/Release/netcoreapp3.1/hello.AssemblyInfoInputs.cache
+/Users/chanyoung/Projects/hello/hello/obj/Release/netcoreapp3.1/hello.AssemblyInfo.cs
+/Users/chanyoung/Projects/hello/hello/obj/Release/netcoreapp3.1/hello.csproj.CoreCompileInputs.cache
