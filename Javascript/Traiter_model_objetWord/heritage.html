@@ -1,0 +1,33 @@
+<script>
+   class Rectangle {
+
+    constructor(width, height) {
+        this.width = width
+        this.height = height
+    }
+
+    getArea () {
+        return this.width * this.height
+    }
+
+    gerPerimeter () {
+        return 2 * (this.width + this.height)
+    }
+
+   }
+
+   class Square extends Rectangle {
+
+    constructor(length) {
+        super(length, length)
+    }
+   }
+   
+   const rect = new Rectangle(23, 12)
+   console.log( rect.getArea())
+   console.log( rect.gerPerimeter())
+
+   const square = new Square(12)
+   console.log( square.getArea())
+   console.log( square.gerPerimeter())
+</script>
