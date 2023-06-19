@@ -1,54 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <script>
+    <script>
         document.addEventListener('DOMContentLoaded', () => {
 
-        const letterbox = document.querySelector('#letterbox')
-        const add = document.querySelector('button')
+            class Student {
 
-        add.addEventListener('click', () => {
-            const input = document.querySelector('#letterbox')
-            const list = input.value
+                constructor(name, age) {
+                    this.name = name
+                    this.age = age
 
-            const div = document.createElement('div')
-            document.body.appendChild(div)
+                }
+                
+            }
 
-            const checkbox = document.createElement('input')
-            document.body.appendChild(checkbox)
-            checkbox.type = 'checkbox'
+            class List {
 
-            const text = document.createElement('span')
-            document.body.appendChild(text)
-            text.textContent = list
-            input.value = ''
+                constructor() {
 
-            checkbox.addEventListener('change', (event) => {
-                if(event.currentTarget.checked){
-                    text.style.textDecoration = 'line-through'
-                } else { text.style.textDecoration = '' }
-            })
+                    this.list = []
+                }
 
-            const clear = document.createElement('button')
-            document.body.appendChild(clear)
+                add (student) {
+                    this.list.push(student) 
+                }
 
-            
-            clear.textContent = 'remove'
+                getlist() {
+                    let output = ''
 
-            clear.addEventListener('click', () => {
-                document.body.removeChild(checkbox)
-                document.body.removeChild(text)
-                document.body.removeChild(clear)
-            })
-            })
+                    for(const a of this.list) {
+                        output += `${a.name}, ${a.age}\n`
+                    }
+                    console.log(output)
+                }
+            }
+
+            const student =  new List()
+            student.add(new Student('chan', 22))
+            student.add(new Student('ha', 18))          
+            student.add(new Student('in', 49))
+
+            student.getlist()
         })
-    
-   </script>
+
+
+    </script>
     <title>Document</title>
 </head>
 <body>
-    <h1>wish list</h1>
-    <input type="text" id="letterbox"> <button>add</button> <br>
     
 </body>
 </html>

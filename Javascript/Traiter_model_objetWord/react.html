@@ -10,8 +10,16 @@
 <body>
     <div id="root"></div>
     <script type="text/babel">
+
+        const style = {
+            backgroundColor: 'yellow'
+        }
+
         const container = document.querySelector('#root')
-        const component = <h1>Hello les gars</h1>
+        const component = <div>
+            <h1>Hello les gars</h1>
+            <span style = {style}>chuis coréen</span>
+            </div>
         ReactDOM.render(component, container)
 
     </script>

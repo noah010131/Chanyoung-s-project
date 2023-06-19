@@ -1,55 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const input = document.querySelector('#textbox')
+        const add =  document.querySelector('#add')
 
-<script>
-    class Person {
+        input.style.userSelect = 'none'
+        add.style.userSelect = 'none'
 
-        constructor(name, kg, height) {
-            this.name = name
-            this.kg = kg
-            this.height = height
-        }
-
-        getcalcul() {
-            return  this.kg / ( this.height * this.height)
-        }
-
-        getbmi () {
-
-            let res = ''
-            if( this.getcalcul() <= 18.5) {
-                res = '저체중입니다'
-            } else if( this.getcalcul() <= 23) {
-                res = '정상입니다'
-            } else if ( this.getcalcul() <= 25) {
-                res = '과체중입니다'
-            } else {
-                res = '비만입니다. 적당히 처 드세요'
-            }
-
-            return res
-        }
-
-        getoutput () {
-           return `${this.name}은(는) ${this.getbmi()}. ${this.getcalcul().toFixed(2)}\n`
-
-        }
-        
-    }
-
+        const fonction = () => {
     
+            const textbox = input.value
 
-    const persons = [
-        new Person ( '하영', 52, 1.65),
-        new Person ( '찬영', 75, 1.80),
-        new Person ( '인숙', 54, 1.68),
-        new Person ( '인창', 53, 1.69)
 
-        
-    ]
+            if(textbox === '') { return }
 
-    let output = ''
-     for (const a of persons) {
-         output += a.getoutput()
-    }
-     console.log(output)
 
-    </script>
+            const div = document.createElement('div')
+            document.body.appendChild(div)
+
+            const checkbox = document.createElement('input')
+            checkbox.type = 'checkbox'
+            div.apfpendChild(checkbox)
+
+            const text = document.createElement('span')
+            div.appendChild(text)
+            text.textContent = textbox
+            input.value = ''
+
+            checkbox.addEventListener('change', (event) => {
+                if(event.currentTarget.checked) { text.style.textDecoration = 'line-through'}
+                else { text.style.textDecoration = ''}
+            })
+
+            const button2 = document.createElement('button')
+            div.appendChild(button2)
+            button2.textContent = 'remove'
+
+            button2.addEventListener('click', ()=> {
+                document.body.removeChild(div)
+
+            })
+
+        }
+
+        add.addEventListener('click', (fonction))
+        input.addEventListener('keyup', (event) => {
+            const enter = 13
+            if(event.keyCode === enter) { fonction()}
+        })
+
+    }) 
+  </script>
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="user-select: none;">wish list</h1>
+    <input type="text" id="textbox">  <button id="add">add</button>
+    
+</body>
+</html>
